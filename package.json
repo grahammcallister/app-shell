@@ -1,0 +1,64 @@
+{
+  "name": "app-shell",
+  "version": "1.0.0",
+  "description": "Electron Shell",
+  "main": "./dist/electron-main/electron-main.js",
+  "scripts": {
+    "build": "npm run clean && tsc && copy-resources && cd angular-shell && ng build --base-href .",
+    "build-main-reload": "npm run clean && copy-resources && tsc -w",
+    "build-renderer-reload": "cd angular-shell && ng build --base-href . --watch",
+    "clean": "rimraf ./dist && rimraf ./bin",
+    "copy-resources": "copyfiles ./resources/win32/application.ico ./dist/electron-main -u 2",
+    "ng": "ng",
+    "package": "npm run build && copyfiles ./resources/win32/application.ico ./bin/win32 && copyfiles ./resources/win32/application.png ./bin/win32 && copyfiles ./resources/win32/icon.ico ./dist/build --flat && copyfiles ./resources/win32/icon.png ./dist/build --flat && electron-builder",
+    "tsc": "tsc",
+    "electron": "electron ./dist/electron-main/electron-main.js"
+  },
+  "build": {
+    "appId": "app-shell",
+    "productName": "Electron Shell",
+    "directories": {
+      "buildResources": "/dist/*,/dist/build/icon.*",
+      "output": "./bin/win32"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./resources/win32/application.ico"
+    },
+    "portable": {
+      "artifactName": "app-shell.exe"
+    },
+    "nsis": {
+      "uninstallerIcon": "./resources/win32/application.ico",
+      "installerIcon": "./resources/win32/application.ico",
+      "installerHeaderIcon": "./resources/win32/application.ico"
+    },
+    "electronVersion": "2.0.2"
+  },
+  "author": "Graham",
+  "license": "MIT",
+  "homepage": "https://github.com/grahammcallister/app-shell#readme",
+  "dependencies": {
+    "ajv": "^6.5.1",
+    "path": "^0.12.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^6.0.8",
+    "asar": "^0.14.3",
+    "copyfiles": "^2.0.0",
+    "devtron": "^1.4.0",
+    "electron": "^2.0.3",
+    "electron-builder": "^20.15.1",
+    "electron-compile": "^6.4.2",
+    "electron-compilers": "^5.9.0",
+    "npx": "^10.2.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.7.2",
+    "wait-on": "^2.1.0"
+  },
+  "repository": {}
+}

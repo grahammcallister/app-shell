@@ -1,0 +1,24 @@
+<div class="title-bar">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="title col-lg-10">{{ title }}</div>
+
+      <div class="title-bar-btns col-lg-2 p-1 text-right">
+        <button class="btn-small title-bar-btn" (click)="openDevTools();" title="Toggle developer tools">D</button>
+        <button class="btn-small title-bar-btn" (click)="reload();" title="Reload window">R</button>
+        <button class="btn-small title-bar-btn" (click)="minimiseWindow();" title="Minimise window">-</button>
+        <button class="btn-small title-bar-btn" (click)="maximiseWindow();" title="Maximise window">+</button>
+        <button class="btn-small title-bar-btn" (click)="closeWindow();" title="Close window">x</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row toolbar">
+            <app-toolbar></app-toolbar>
+    </div>
+  </div>
+

@@ -1,0 +1,1 @@
+export const WindowCount: string = "window_count";

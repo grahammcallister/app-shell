@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body, html {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  background-color: aliceblue;
+}
+
+button {
+  -webkit-app-region: no-drag;
+}

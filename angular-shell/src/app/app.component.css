@@ -1,0 +1,31 @@
+.title-bar {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  height: 36px;
+  background-color: cornflowerblue;
+  padding: none;
+  margin: 0px;
+}
+
+.title {
+  top: 5px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+.title-bar-btns {
+
+}
+
+.title-bar-btn {
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  width: 25px;
+  margin: 1px;
+}
+
+.toolbar {
+  background-color: lightblue;
+}
+
