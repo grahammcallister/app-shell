@@ -1,9 +1,10 @@
-import { app, ipcMain, BrowserWindow } from "electron";
+import { app, ipcMain } from "electron";
 import { setupDevelopmentEnvironment } from "../environments/environment.setup";
 import * as State from "./state/state";
 import * as StateActions from "./state/state.actions";
 import * as Queries from "./state/queries";
 import { createShellWindow } from "./window/window";
+import { sendToAllWindows } from "./window/window.ipc.util";
 
 setupDevelopmentEnvironment();
 State.initialiseState();
@@ -36,14 +37,3 @@ ipcMain.addListener(Queries.WindowCount, (event: any) => {
 let unsubscribe: any = State.subscribe((): void => {
   sendToAllWindows(Queries.WindowCount, State.getState().window_count);
 });
-
-function sendToAllWindows(channel: string, message: any): void {
-  let windows: BrowserWindow[] = BrowserWindow.getAllWindows();
-  if(windows && windows.length > 0) {
-    windows.forEach(
-      (element) => {
-        element.webContents.send(channel, message);
-      }
-    );
-  }
-}
