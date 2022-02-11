@@ -41,7 +41,7 @@
   "license": "MIT",
   "homepage": "https://github.com/grahammcallister/app-shell#readme",
   "dependencies": {
-    "ajv": "^6.5.1",
+    "ajv": "^6.12.3",
     "path": "^0.12.7",
     "redux": "^4.0.0"
   },
