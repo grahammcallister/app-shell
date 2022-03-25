@@ -50,7 +50,7 @@
     "asar": "^0.14.3",
     "copyfiles": "^2.0.0",
     "devtron": "^1.4.0",
-    "electron": "^2.0.3",
+    "electron": "^13.6.6",
     "electron-builder": "^20.15.1",
     "electron-compile": "^6.4.2",
     "electron-compilers": "^5.9.0",
