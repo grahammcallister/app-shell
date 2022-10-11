@@ -51,7 +51,7 @@
     "copyfiles": "^2.0.0",
     "devtron": "^1.4.0",
     "electron": "^2.0.3",
-    "electron-builder": "^20.15.1",
+    "electron-builder": "^20.44.4",
     "electron-compile": "^6.4.2",
     "electron-compilers": "^5.9.0",
     "npx": "^10.2.0",
